@@ -16,7 +16,7 @@ import torchvision.transforms as transforms
 from PIL import Image
 
 os.environ['CUDA_HOME'] = '/usr/local/cuda'
-os.environ['CUDA_VISIBLE_DEVICES'] = '3'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 img_to_tensor = transforms.ToTensor()
 
@@ -61,19 +61,17 @@ def extract_feature(resmodel,imgpath):
 
 def main():
     model = make_model()
-
-    #####train#####
-    signers_path = '/data3/tangshengeng/USTC100/ustc_depth_frames/'
-    video_save_path = '/data3/tangshengeng/USTC100/resnet18_depth_feats/'
-    signers = sorted(os.listdir(signers_path))
-    for signer in signers:
-        videos_path = os.path.join(signers_path + signer + '/' )
+    video_frames_path = '../frames/'
+    feats_path = '../features/resnet18_feats/'
+    video_frames = sorted(os.listdir(video_frames_path))
+    for video_frame in video_frames:
+        videos_path = os.path.join(video_frames_path , video_frame , '/' )
         videos = sorted(os.listdir(videos_path))
         for video in videos:
             frame_count = 0
             feature_list = []
 
-            frames_path =  os.path.join(videos_path+ video + '/' )
+            frames_path =  os.path.join(videos_path , video , '/' )
             frames = sorted(os.listdir(frames_path)) # check the order!!!
             print frames
 
@@ -86,7 +84,7 @@ def main():
             video_feature = np.array(feature_list)
             print ('%s,%s'%(video,frame_count))
 
-            save_path = os.path.join(video_save_path, video + '.npy')
+            save_path = os.path.join(feats_path, video , '.npy')
             np.save(save_path, video_feature)
 
 if __name__=="__main__":
