@@ -61,30 +61,30 @@ def extract_feature(resmodel,imgpath):
 
 def main():
     model = make_model()
-    video_frames_path = '../frames/'
-    feats_path = '../features/resnet18_feats/'
+    video_frames_path = './frames/'
+    feats_path = './features/resnet18_feats/'
     video_frames = sorted(os.listdir(video_frames_path))
     for video_frame in video_frames:
-        videos_path = os.path.join(video_frames_path , video_frame , '/' )
+        videos_path = os.path.join(video_frames_path, video_frame)
         videos = sorted(os.listdir(videos_path))
         for video in videos:
             frame_count = 0
             feature_list = []
 
-            frames_path =  os.path.join(videos_path , video , '/' )
+            frames_path =  os.path.join(videos_path, video)
             frames = sorted(os.listdir(frames_path)) # check the order!!!
             print frames
 
             for img in frames:
-                imgpath = frames_path+img
-                frame_feature = extract_feature(model, imgpath)
+                img_path = os.path.join(frames_path, img)
+                frame_feature = extract_feature(model, img_path)
                 feature_list.append(frame_feature)
                 frame_count += 1
 
             video_feature = np.array(feature_list)
             print ('%s,%s'%(video,frame_count))
 
-            save_path = os.path.join(feats_path, video , '.npy')
+            save_path = os.path.join(feats_path, video + '.npy')
             np.save(save_path, video_feature)
 
 if __name__=="__main__":
