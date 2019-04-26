@@ -7,13 +7,12 @@ In this project, we (1) first split the video into frames, (2) then extract the 
 # Requirements
 See the installation instruction for a step-by-step installation guide. See the server instruction for server settup.
 
-* Install cuda-8.0
-* Install cudnn v5.1
-* Download PyTorch for python-2.7 and clone the repository.
-* Download PyTorch-3.5 for using further pretrained libraries with anaconda3.
+* Install [cuda-8.0](https://developer.nvidia.com/cuda-downloads)
+* Install [cudnn v5.1](https://developer.nvidia.com/cudnn)
+* Download [PyTorch for python-2.7](https://pytorch.org/) and clone the repository.
 
 ```
 pip install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp27-none-linux_x86_64.whl
 pip install torchvision
-git clone https://github.com/meliketoy/resnet-fine-tuning.pytorch
+git clone https://github.com/tangshengeng/extract-video-feature_PyTorch
 ```
