@@ -49,10 +49,8 @@ def class_process(dir_path, dst_dir_path, class_name):
 
 
 if __name__=="__main__":
-    dir_path = '/data/kd-slr-data/100_Sents/'
-    dst_dir_path = '/data3/tangshengeng/USTC100/ustc_depth_frames/'
-    # dir_path = '/data2/tangshengeng/USTC100/temp frames/1/'
-    # dst_dir_path = '/data2/tangshengeng/USTC100/temp frames/3/'
+    dir_path = '../videos/'
+    dst_dir_path = '../frames/'
 
     for class_name in sorted(os.listdir(dir_path)):
         class_process(dir_path, dst_dir_path, class_name)
