@@ -12,6 +12,8 @@ See the installation instruction for a step-by-step installation guide. See the 
 * Download PyTorch for python-2.7 and clone the repository.
 * Download PyTorch-3.5 for using further pretrained libraries with anaconda3.
 
-``` pip install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp27-none-linux_x86_64.whl
-``` pip install torchvision
-``` git clone https://github.com/meliketoy/resnet-fine-tuning.pytorch
+```
+pip install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp27-none-linux_x86_64.whl
+pip install torchvision
+git clone https://github.com/meliketoy/resnet-fine-tuning.pytorch
+```
