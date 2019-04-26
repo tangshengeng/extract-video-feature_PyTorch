@@ -15,11 +15,10 @@ def class_process(dir_path, dst_dir_path, class_name):
         os.mkdir(dst_class_path)
 
     for file_name in sorted(os.listdir(class_path)):
-        if 'depth.avi' not in file_name:
+        if '.mp4' not in file_name:
             continue
         name, ext = os.path.splitext(file_name)
         dst_directory_path = os.path.join(dst_class_path, name)
-        # ipdb.set_trace()
         video_file_path = os.path.join(class_path, file_name)
         try:
             if os.path.exists(dst_directory_path):
@@ -34,23 +33,22 @@ def class_process(dir_path, dst_dir_path, class_name):
         except:
             print(dst_directory_path)
             continue
-        # cmd = 'ffmpeg -i \"{}\" -r 30 -ss 00:00:00.030 -s 600*300 \"{}/%06d.png\"'.format(video_file_path, dst_directory_path)
-        cmd = 'ffmpeg -i \"{}\" -r 30 -ss 00:00:00.030 -s 380*300 \"{}/%06d.png\"'.format(video_file_path, dst_directory_path)
+
+        cmd = 'ffmpeg -i \"{}\" -r 25 -ss 00:00:00.030 -s 640*360 \"{}/%06d.png\"'.format(video_file_path, dst_directory_path)
         print(cmd)
         subprocess.call(cmd, shell=True)
         for frame_name in sorted(os.listdir(dst_directory_path)):
             frame_path = dst_directory_path+'/'+frame_name
             frame = Image.open(frame_path)
             # img = frame.crop([190,40,400,300])
-            img = frame.crop([70,40,280,300])
+            img = frame.crop([0,0,640,360])
             img.save(frame_path)
-        # ipdb.set_trace()
         print('\n')
 
 
 if __name__=="__main__":
-    dir_path = '../videos/'
-    dst_dir_path = '../frames/'
+    dir_path = './videos/'
+    dst_dir_path = './frames/'
 
     for class_name in sorted(os.listdir(dir_path)):
         class_process(dir_path, dst_dir_path, class_name)
