@@ -1,4 +1,4 @@
-# extract-video-feature_PyTorch
+# Extract Video Feature (PyTorch)
 Pytorch implementation of extracting frame-level features of video by a 2D CNN(ResNet-18). This project is made by Shengeng Tang.
 Hefei University of Technology, Ph.D candidate.
 
@@ -15,4 +15,17 @@ See the installation instruction for a step-by-step installation guide. See the 
 pip install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp27-none-linux_x86_64.whl
 pip install torchvision
 git clone https://github.com/tangshengeng/extract-video-feature_PyTorch
+```
+
+# Split the Video into Frames
+```
+python video2frames.py
+```
+# Extract the Features
+```
+python extract_features.py
+```
+# Combine the Features
+```
+python framefeats2clipfeats.py
 ```
