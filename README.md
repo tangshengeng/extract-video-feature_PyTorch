@@ -1,4 +1,4 @@
-![](https://github.com/tangshengeng/extract-video-feature_PyTorch/blob/master/pytorch.png)
+![](https://github.com/tangshengeng/extract-video-feature_PyTorch/blob/master/pytorch.png=250x)
 # Extract Video Feature (PyTorch)
 Pytorch implementation of extracting frame-level features of video by a 2D CNN(ResNet-18). This project is made by Shengeng Tang.
 Hefei University of Technology, Ph.D candidate.
