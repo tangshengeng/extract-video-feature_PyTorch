@@ -1,5 +1,5 @@
 <div align=center>
-<img src="https://github.com/tangshengeng/extract-video-feature_PyTorch/blob/master/pytorch.png" width=40%>
+<img src="https://github.com/tangshengeng/extract-video-feature_PyTorch/blob/master/pytorch.png" width=60%>
 </div>
 
 # Extract Video Feature (PyTorch)
